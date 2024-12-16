@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
 
@@ -35,7 +34,7 @@ const PageNotFound = () => {
           Oops! Look likes something going wrong
         </h2>
         <p className="text-gray-600 mb-8">
-          Page Cannot be found! We'll have it figured out in no time.
+          {`Page Cannot be found! We'll have it figured out in no time.`}
           <p>Meanwhile, check out these fresh ideas:</p>
         </p>
 
