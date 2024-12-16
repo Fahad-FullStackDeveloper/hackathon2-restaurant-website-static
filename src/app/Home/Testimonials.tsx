@@ -81,7 +81,7 @@ const Testimonials = () => {
         </div>
         {/* 5-Star Bottom Rating */}
         <div className="flex justify-center mt-6">
-          <Rating maxStars={5} color="#FF9F0D" size={24} currentRating={5} />
+          <Rating maxStars={5} color="brand" size={24} currentRating={5} />
         </div>
       </div>
 
