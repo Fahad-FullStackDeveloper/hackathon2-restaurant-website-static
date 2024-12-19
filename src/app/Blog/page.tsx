@@ -86,7 +86,7 @@ const BlogDetails = () => {
                   className="w-full h-56 sm:h-64 md:h-72 object-cover"
                 />
                 <div className="p-6">
-                  <div className="flex flex-wrap items-center text-gray-600 mb-4 space-x-4">
+                  <div className="flex flex-wrap items-center text-brand mb-4 space-x-4">
                     <div className="flex items-center space-x-1">
                       <FaCalendarAlt />
                       <span className="text-sm">{post.date}</span>
@@ -106,7 +106,7 @@ const BlogDetails = () => {
                   <p className="text-gray-700 text-sm sm:text-base mb-4">
                     {post.description}
                   </p>
-                  <button className="text-yellow-600 border border-yellow-600 px-4 py-2 text-sm sm:text-base flex items-center hover:bg-yellow-600 hover:text-white rounded">
+                  <button className="text-base-dark border border-brand px-4 py-2 text-sm sm:text-base flex items-center hover:bg-brand hover:text-white rounded">
                     Read More
                   </button>
                 </div>
@@ -269,18 +269,18 @@ const BlogDetails = () => {
 
         {/* Pagination */}
         <div className="flex justify-center items-center mt-8">
-          <button className="border border-yellow-500 text-yellow-500 px-4 py-2 mx-1 hover:bg-yellow-500 hover:text-white">
+          <button className="border border-brand text-brand px-4 py-2 mx-1 hover:bg-brand hover:text-white">
             &lt;&lt;
           </button>
           {[1, 2, 3].map((page) => (
             <button
               key={page}
-              className="border border-yellow-500 text-yellow-500 px-4 py-2 mx-1 hover:bg-yellow-500 hover:text-white"
+              className="border border-brand text-brand px-4 py-2 mx-1 hover:bg-brand hover:text-white"
             >
               {page}
             </button>
           ))}
-          <button className="border border-yellow-500 text-yellow-500 px-4 py-2 mx-1 hover:bg-yellow-500 hover:text-white">
+          <button className="border border-brand text-brand px-4 py-2 mx-1 hover:bg-brand hover:text-white">
             &gt;&gt;
           </button>
         </div>

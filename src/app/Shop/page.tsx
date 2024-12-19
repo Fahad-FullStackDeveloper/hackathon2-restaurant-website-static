@@ -1,27 +1,8 @@
-// "use client";
-// import React from "react";
-// import Navbar from "../components/Navbar";
-
-// const ShopList = () => {
-//   return (
-//     <>
-//       <Navbar />
-//
-
-//       {/* This is the Shop page */}
-//       <main>
-//         <h1>Shop Page</h1>
-//       </main>
-//     </>
-//   );
-// };
-
-// export default ShopList;
-
 "use client";
 import Navbar from "../components/Navbar";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ShopPage = () => {
   const [products] = useState([
@@ -179,9 +160,7 @@ const ShopPage = () => {
                 <h3 className="text-lg font-bold mb-2">{product.name}</h3>
                 <div className="flex items-center gap-4">
                   {/* Display price and discount in the same line */}
-                  <p className="text-brand font-semibold">
-                    {product.price}
-                  </p>
+                  <p className="text-brand font-semibold">{product.price}</p>
                   {[1, 3, 5, 11].includes(product.id) && (
                     <p className="text-gray-500 line-through">
                       {product.discountPrice}
@@ -212,15 +191,33 @@ const ShopPage = () => {
         </main>
 
         {/* Sidebar */}
-        <aside className="w-full lg:w-1/4 bg-white">
+        <aside className="w-full lg:w-1/4 bg-white boarder border-gray-300 p-4">
           {/* Search Product */}
-          <div className="mb-6">
+          <div className="flex mb-6 h-10 w-60">
+          <div className="flex items-center h-10">
             <input
               type="text"
               id="search"
               placeholder="Search by Product"
               className="w-full p-2 border bg-orange-100"
             />
+          </div>
+          {/* Search Icon */}
+          <div className="flex items-center justify-center bg-brand w-12">
+            <Link href="/Search">
+              <svg
+                className="transition duration-300 cursor-pointer hover:text-brand"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24" // Adjust size here
+                height="24" // Adjust size here
+                fill="#fafafa"
+                id="search-icon"
+                viewBox="0 0 256 256"
+              >
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+              </svg>
+            </Link>
+          </div>
           </div>
 
           {/* Categories */}
@@ -254,11 +251,11 @@ const ShopPage = () => {
               <input
                 type="range"
                 min="0"
-                max="8000"
+                max="4000"
                 className="flex-grow bg-white accent-brand"
               />
-              <div className="flex justify-between items-center text-brand">
-                <span>From $0 to $8000</span>
+              <div className="flex justify-between items-center text-gray-500 mb-6">
+                <span>From $0 to $4000</span>
                 <span>Filter</span>
               </div>
             </div>
@@ -281,22 +278,22 @@ const ShopPage = () => {
             <ul className="space-y-2">
               {[
                 {
-                  image: "/recent1.png",
+                  image: "/images/recent1.png",
                   date: "22 oct 2022",
                   description: "Lorem ipsum dolor sit amet",
                 },
                 {
-                  image: "/recent2.png",
+                  image: "/images/recent1.png",
                   date: "22 oct 2022",
                   description: "Lorem ipsum dolor sit amet",
                 },
                 {
-                  image: "/recent3.png",
+                  image: "/images/recent1.png",
                   date: "22 oct 2022",
                   description: "Lorem ipsum dolor sit amet",
                 },
                 {
-                  image: "/recent4.png",
+                  image: "/images/recent1.png",
                   date: "22 oct 2022",
                   description: "Lorem ipsum dolor sit amet",
                 },
@@ -305,8 +302,8 @@ const ShopPage = () => {
                   <Image
                     src={post.image}
                     alt="Recent Post"
-                    width={50}
-                    height={50}
+                    width={80}
+                    height={80}
                   />
                   <div className="text-start">
                     <span className="text-sm text-gray-400">{post.date}</span>
@@ -322,7 +319,7 @@ const ShopPage = () => {
           {/* Product Tags */}
           <div>
             <p className="font-bold mb-2">Product Tags</p>
-            <ul className="flex flex-wrap gap-2">
+            <ul className="flex flex-wrap text-sm gap-2">
               {[
                 "Services",
                 "Our Menu",
@@ -335,7 +332,7 @@ const ShopPage = () => {
               ].map((tag) => (
                 <li
                   key={tag}
-                  className="px-3 py-1 text-gray-400 border rounded cursor-pointer hover:text-brand hover:underline"
+                  className="px-3 py-1 text-gray-700 underline cursor-pointer hover:text-brand hover:underline"
                 >
                   {tag}
                 </li>

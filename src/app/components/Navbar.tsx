@@ -44,7 +44,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/ShopList"
+              href="/Shop"
               className="text-base-contrast hover:text-brand"
             >
               Shop

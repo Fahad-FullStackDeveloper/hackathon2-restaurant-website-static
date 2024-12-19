@@ -43,7 +43,7 @@ const HomeNavbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/ShopList" className="text-base-contrast hover:text-brand">
+            <Link href="/Shop" className="text-base-contrast hover:text-brand">
               Shop
             </Link>
           </li>
