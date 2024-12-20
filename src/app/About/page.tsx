@@ -1,12 +1,138 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/app/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
-import Testimonials from "../Home/Testimonials";
 import { IoPlayOutline } from "react-icons/io5";
+import Rating from "../components/Rating";
 
 const AboutPage = () => {
+  const [currentReview, setCurrentReview] = useState(0);
+
+  const reviews = [
+    {
+      personImage: "/images/testimonials_person.png",
+      flowerImage: "/images/testimonials_flower.png",
+      Quotes: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          fill="#ff9f0d"
+          viewBox="0 0 256 256"
+        >
+          <path d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z"></path>
+        </svg>
+      ),
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dolor vitae justo gravida cursus.",
+      rating: 5,
+    },
+    {
+      personImage: "/images/testimonials_person.png",
+      flowerImage: "/images/testimonials_flower.png",
+      Quotes: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          fill="#ff9f0d"
+          viewBox="0 0 256 256"
+        >
+          <path d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z"></path>
+        </svg>
+      ),
+      text: "Suspendisse potenti. Ut vehicula justo eget justo malesuada pharetra.",
+      rating: 4,
+    },
+    {
+      personImage: "/images/testimonials_person.png",
+      flowerImage: "/images/testimonials_flower.png",
+      Quotes: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          fill="#ff9f0d"
+          viewBox="0 0 256 256"
+        >
+          <path d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z"></path>
+        </svg>
+      ),
+      text: "Cras sed libero non est cursus pellentesque sit amet eu eros.",
+      rating: 4,
+    },
+    {
+      personImage: "/images/testimonials_person.png",
+      flowerImage: "/images/testimonials_flower.png",
+      Quotes: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          fill="#ff9f0d"
+          viewBox="0 0 256 256"
+        >
+          <path d="M100,56H40A16,16,0,0,0,24,72v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,100,56Zm0,80H40V72h60ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Zm0,80H156V72h60Z"></path>
+        </svg>
+      ),
+      text: "Pellentesque quis sapien a arcu volutpat luctus.",
+      rating: 5,
+    },
+  ];
+  const handleReviewChange = (index: number) => {
+    setCurrentReview(index);
+  };
+  const menuItems = [
+    {
+      name: "Alder Grilled Chinook Salmon",
+      description: "Toasted French bread topped with romano, cheddar",
+      calories: "560 CAL",
+      price: "$32.00",
+    },
+    {
+      name: "Berries and Creme Tart",
+      description: "Gorgonzola, ricotta, mozzarella, taleggio",
+      calories: "700 CAL",
+      price: "$43.00",
+    },
+    {
+      name: "Tormentoso Bush Pizza Pintoage",
+      description: "Ground cumin, avocados, peeled and cubed",
+      calories: "1000 CAL",
+      price: "$14.00",
+    },
+    {
+      name: "Spicy Vegan Potato Curry",
+      description: "Spreadable cream cheese, crumbled blue cheese",
+      calories: "560 CAL",
+      price: "$35.00",
+    },
+    {
+      name: "Grilled Herb Chicken",
+      description: "Served with roasted vegetables and creamy sauce",
+      calories: "650 CAL",
+      price: "$28.00",
+    },
+    {
+      name: "Lobster Bisque Soup",
+      description: "Rich and creamy soup with chunks of fresh lobster",
+      calories: "450 CAL",
+      price: "$25.00",
+    },
+    {
+      name: "Vegan Avocado Salad",
+      description: "Mixed greens, ripe avocados, and citrus vinaigrette",
+      calories: "320 CAL",
+      price: "$18.00",
+    },
+    {
+      name: "Classic Margherita Pizza",
+      description: "Fresh basil, mozzarella, and tomatoes on a crispy crust",
+      calories: "900 CAL",
+      price: "$22.00",
+    },
+  ];
+
   return (
     <>
       <Navbar />
@@ -63,7 +189,7 @@ const AboutPage = () => {
               />
             </div>
             {/* Text Content and Buttons */}
-            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center mt-28">
               <h1 className="text-sm mb-4 font-medium text-yellow-400 italic">
                 About us _____
               </h1>
@@ -165,17 +291,231 @@ const AboutPage = () => {
         </div>
 
         {/* Full Width Image Section */}
-        <div className="mb-8">
+        <div className="relative mb-8 w-full h-80">
           <Image
-            src="/images/full-width-image.jpg"
+            src="/images/BG_TeamMember.png"
             alt="Full Width Image"
             width={1920}
             height={800}
-            className="w-full object-cover rounded"
+            className="w-full object-cover rounded -z-10"
           />
+          {/* Text for Team Member */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-brand-contrast mb-20">
+            <h1 className="text-3xl font-bold">Team Member</h1>
+            <p className="text-sm font-semibold text-center wrap ">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius
+              sed pharetra dictum neque massa congue
+            </p>
+          </div>
         </div>
-        <div className="bg-slate-500 mb-8">
-        <Testimonials />
+
+        {/* Image Grid Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative -mt-44 pl-24 pr-24">
+          {/* First Image */}
+          <div className="relative group">
+            <Image
+              src="/images/TeamMembers.png"
+              alt="Mark Henry Owner"
+              width={400}
+              height={300}
+              className="w-full h-auto object-cover rounded-lg shadow-lg duration-300 transform hover:scale-105 translate-y-16 sm:translate-y-20 lg:translate-y-0"
+            />
+            <div className="absolute inset-x-0 -bottom-4 bg-white text-center p-2 shadow-lg rounded-lg">
+              <h3 className="text-lg font-semibold">Mark Henry</h3>
+              <p className="text-sm text-gray-500">Owner</p>
+            </div>
+          </div>
+
+          {/* Second Image */}
+          <div className="relative group">
+            <Image
+              src="/images/TeamMembers.png"
+              alt="Moon Henry Founder"
+              width={400}
+              height={300}
+              className="w-full h-auto object-cover rounded-lg shadow-lg duration-300 transform hover:scale-105 translate-y-16 sm:translate-y-20 lg:translate-y-0"
+            />
+            <div className="absolute inset-x-0 -bottom-4 bg-white text-center p-2 shadow-lg rounded-lg">
+              <h3 className="text-lg font-semibold">Moon Henry</h3>
+              <p className="text-sm text-gray-500">Founder</p>
+            </div>
+          </div>
+
+          {/* Third Image */}
+          <div className="relative group">
+            <Image
+              src="/images/TeamMembers.png"
+              alt="Lucky Helen Chef"
+              width={400}
+              height={300}
+              className="w-full h-auto object-cover rounded-lg shadow-lg duration-300 transform hover:scale-105 translate-y-16 sm:translate-y-20 lg:translate-y-0"
+            />
+            <div className="absolute inset-x-0 -bottom-4 bg-white text-center p-2 shadow-lg rounded-lg">
+              <h3 className="text-lg font-semibold">Lucky Helen</h3>
+              <p className="text-sm text-gray-500">Chef</p>
+            </div>
+          </div>
+
+          {/* Fourth Image */}
+          <div className="relative group">
+            <Image
+              src="/images/TeamMembers.png"
+              alt="Tom Monrow Specialist"
+              width={400}
+              height={300}
+              className="w-full h-auto object-cover rounded-lg shadow-lg duration-300 transform hover:scale-105 translate-y-16 sm:translate-y-20 lg:translate-y-0"
+            />
+            <div className="absolute inset-x-0 -bottom-4 bg-white text-center p-2 shadow-lg rounded-lg">
+              <h3 className="text-lg font-semibold">Tom Monrow</h3>
+              <p className="text-sm text-gray-500">Specialist</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full flex flex-col items-center px-6 mt-40 mb-28">
+          {/* Testimonials Heading */}
+          <div className="mb-10">
+            <h2 className="text-3xl text-brand mb-4 font-GreatVibes">
+              Testimonials
+            </h2>
+            <h3 className="text-5xl font-semibold font-Helvetica text-base-dark mb-20">
+              <span className="text-brand">Wh</span>at our client are saying
+            </h3>
+          </div>
+
+          {/* Review Cards */}
+          <div className="relative bg-base-contrast p-6 rounded-md w-full max-w-5xl h-full max-h-5xl">
+            {/* Person Image */}
+            <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
+              <Image
+                className="object-cover rounded-full shadow-lg"
+                src={reviews[currentReview].personImage}
+                alt="Testimonials Person"
+                width={100}
+                height={100}
+              />
+            </div>
+
+            {/* Flower Image */}
+            <div className="absolute -right-16 top-1/2 transform -translate-y-1/2 opacity-20">
+              <Image
+                className="object-cover rounded-md shadow-lg"
+                src={reviews[currentReview].flowerImage}
+                alt="Testimonials Flower"
+                width={200}
+                height={200}
+              />
+            </div>
+
+            {/* Review Text */}
+            <div className="text-center mt-16">
+              <p className="text-md text-base font-Inter mb-4">
+                {reviews[currentReview].text}
+              </p>
+            </div>
+            {/* 5-Star Bottom Rating */}
+            <div className="flex justify-center mt-6">
+              <Rating maxStars={5} color="brand" size={24} currentRating={5} />
+            </div>
+          </div>
+
+          {/* Navigation Dots */}
+          <div className="flex items-center justify-center mt-10 gap-4">
+            {reviews.map((_, index) => (
+              <div
+                key={index}
+                className={`w-5 h-5 rounded-full cursor-pointer ${
+                  currentReview === index ? "bg-brand-light" : "bg-brand-dark"
+                }`}
+                onClick={() => handleReviewChange(index)}
+              ></div>
+            ))}
+          </div>
+        </div>
+        <div className="text-center mb-12 px-4 md:px-12 lg:px-24">
+          {/* Heading */}
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-base-dark mb-6 md:mb-8">
+            Our Food Menu
+          </h3>
+
+          {/* Description */}
+          <p className="text-base sm:text-lg text-center max-w-3xl mx-auto mb-10 md:mb-20">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+            diam pellentesque bibendum non dui volutpat fringilla bibendum.
+          </p>
+
+          {/* Navbar Links */}
+          <nav className="flex flex-wrap justify-center gap-4 md:gap-8 lg:gap-10 text-base-dark text-base sm:text-lg mb-10 md:mb-16">
+            <a
+              href="#breakfast"
+              className="text-brand hover:text-brand-light hover:underline transition-colors"
+            >
+              Breakfast
+            </a>
+            <a
+              href="#lunch"
+              className="hover:text-brand hover:underline transition-colors"
+            >
+              Lunch
+            </a>
+            <a
+              href="#dinner"
+              className="hover:text-brand hover:underline transition-colors"
+            >
+              Dinner
+            </a>
+            <a
+              href="#dessert"
+              className="hover:text-brand hover:underline transition-colors"
+            >
+              Dessert
+            </a>
+            <a
+              href="#drink"
+              className="hover:text-brand hover:underline transition-colors"
+            >
+              Drink
+            </a>
+            <a
+              href="#snack"
+              className="hover:text-brand hover:underline transition-colors"
+            >
+              Snack
+            </a>
+            <a
+              href="#soups"
+              className="hover:text-brand hover:underline transition-colors"
+            >
+              Soups
+            </a>
+          </nav>
+        </div>
+        <div className="bg-gray-50 py-0 px-4 sm:px-8 lg:px-16">
+          <h2 className=" text-3xl font-bold text-center text-base-dark mb-8">
+            Our Food Menu
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            {menuItems.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg hover:shadow-brand transition-shadow duration-300 border-b border-brand hover:border-brand-light"
+              >
+                <h3 className="text-lg font-semibold text-base-dark hover:text-brand transition-colors duration-200">
+                  {item.name}
+                </h3>
+                <p className="text-sm text-gray-600 mt-2">{item.description}</p>
+                <p className="text-xs text-gray-500 mt-1">{item.calories}</p>
+                <p className="text-brand font-bold mt-2">{item.price}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center items-center mb-28">
+          <Link href="./Menu">
+            <button className="border-2 border-spacing-2 border-brand text-base-dark text-lg px-8 py-2 mt-10 hover:bg-brand hover:text-white transition duration-300">
+              See More
+            </button>
+          </Link>
         </div>
       </div>
     </>
