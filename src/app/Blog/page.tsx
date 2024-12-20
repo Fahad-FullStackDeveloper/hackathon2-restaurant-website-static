@@ -57,7 +57,7 @@ const BlogDetails = () => {
           {/* Main Heading */}
           <h1 className="text-5xl font-bold mb-4">
             <span className="text-brand">Blog</span>
-            <span className="text-white"> Details</span>
+            <span className="text-white"> List</span>
           </h1>
 
           {/* Page Route */}
