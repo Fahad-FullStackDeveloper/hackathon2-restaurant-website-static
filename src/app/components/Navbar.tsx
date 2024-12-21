@@ -93,7 +93,7 @@ const Navbar = () => {
           </Link>
 
           {/* Shopping Tote Icon */}
-          <Link href="/Cart">
+          <Link href="/ShoppingCart">
             <svg
               className="transition duration-300 cursor-pointer hover:text-brand"
               xmlns="http://www.w3.org/2000/svg"
