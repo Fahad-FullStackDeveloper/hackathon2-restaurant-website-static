@@ -2,10 +2,11 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
+import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaCalendarAlt, FaUserAlt, FaComment } from "react-icons/fa";
 
-const BlogDetails = () => {
+const BlogList = () => {
   const posts = [
     {
       title: "10 Reasons To Do A Digital Detox Challenge",
@@ -92,12 +93,12 @@ const BlogDetails = () => {
                       <span className="text-sm">{post.date}</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <FaUserAlt />
-                      <span className="text-sm">{post.admin}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
                       <FaComment />
                       <span className="text-sm">{post.comments} Comments</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <FaUserAlt />
+                      <span className="text-sm">{post.admin}</span>
                     </div>
                   </div>
                   <h2 className="text-xl sm:text-2xl font-bold mb-4">
@@ -106,9 +107,11 @@ const BlogDetails = () => {
                   <p className="text-gray-700 text-sm sm:text-base mb-4">
                     {post.description}
                   </p>
+                  <Link href="/BlogDetails">
                   <button className="text-base-dark border border-brand px-4 py-2 text-sm sm:text-base flex items-center hover:bg-brand hover:text-white rounded">
                     Read More
                   </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -289,4 +292,4 @@ const BlogDetails = () => {
   );
 };
 
-export default BlogDetails;
+export default BlogList;

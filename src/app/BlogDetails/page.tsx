@@ -5,113 +5,86 @@ import Image from "next/image";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaCalendarAlt, FaUserAlt, FaComment } from "react-icons/fa";
 
-const BlogList = () => {
-  const posts = [
-    {
-      title: "10 Reasons To Do A Digital Detox Challenge",
-      date: "Feb 14, 2022",
-      admin: "Admin",
-      comments: 24,
-      description:
-        "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
-      image: "/images/blog_img1.png",
-    },
-    {
-      title: "The Ultimate Hangover Burger: Egg in a Hole Burger",
-      date: "Mar 1, 2022",
-      admin: "Chef John",
-      comments: 18,
-      description:
-        ".At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
-      image: "/images/blog_img2.png",
-    },
-    {
-      title: "Spicy Jalapeno Burger",
-      date: "Apr 10, 2022",
-      admin: "Admin",
-      comments: 30,
-      description:
-        "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
-      image: "/images/blog_img3.png",
-    },
-    {
-      title: "The Ultimate Hangover Burger: Egg in a Hole Burger",
-      date: "May 15, 2022",
-      admin: "Chef Emily",
-      comments: 12,
-      description:
-        "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat",
-      image: "/images/blog_img4.png",
-    },
-  ];
-
+const BlogDetails: React.FC = () => {
   return (
     <>
       <Navbar />
       {/* Header Component */}
       <header
         className="bg-black text-white py-16 bg-cover bg-center"
-        style={{ backgroundImage: `url('/images/HeaderBG.png')` }} // Inline style path to your image
+        style={{ backgroundImage: `url('/images/HeaderBG.png')` }}
       >
         <div className="container mx-auto px-4 flex flex-col justify-center items-center text-center">
-          {/* Main Heading */}
           <h1 className="text-5xl font-bold mb-4">
-            <span className="text-brand">Blog</span>
-            <span className="text-white"> List</span>
+            <span className="text-brand">Blog</span> Details
           </h1>
-
-          {/* Page Route */}
           <p className="text-lg">
             Home <span className="mx-2">/</span>
-            <span className="text-brand">Blog Details</span>{" "}
-            {/* Changed color to brand color #FF9F0D */}
+            <span className="text-brand">Blog Details</span>
           </p>
         </div>
       </header>
 
+      {/* Main Content */}
       <div className="bg-white py-8 px-4 sm:px-6 lg:px-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Blog Content */}
-          <div className="lg:col-span-2 space-y-8">
-            {posts.map((post, index) => (
-              <div
-                key={post.title + index}
-                className="bg-white overflow-hidden"
-              >
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  width={800}
-                  height={600}
-                  className="w-full h-56 sm:h-64 md:h-72 object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex flex-wrap items-center text-brand mb-4 space-x-4">
-                    <div className="flex items-center space-x-1">
-                      <FaCalendarAlt />
-                      <span className="text-sm">{post.date}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <FaUserAlt />
-                      <span className="text-sm">{post.admin}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <FaComment />
-                      <span className="text-sm">{post.comments} Comments</span>
-                    </div>
-                  </div>
-                  <h2 className="text-xl sm:text-2xl font-bold mb-4">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-700 text-sm sm:text-base mb-4">
-                    {post.description}
-                  </p>
-                  <button className="text-base-dark border border-brand px-4 py-2 text-sm sm:text-base flex items-center hover:bg-brand hover:text-white rounded">
-                    Read More
-                  </button>
-                </div>
+          {/* Blog Post */}
+          <div className="lg:col-span-2">
+            <Image
+              src="/images/blog_img1.png"
+              alt="Blog Header Image"
+              width={800}
+              height={500}
+              className="rounded-lg"
+            />
+            <div className="flex items-center text-brand mt-4 space-x-4">
+              <div className="flex items-center space-x-1">
+                <FaCalendarAlt />
+                <span>Feb 14, 2022</span>
               </div>
-            ))}
+              <div className="flex items-center space-x-1">
+                <FaComment />
+                <span className="text-sm">24 Comments</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <FaUserAlt />
+                <span>Admin</span>
+              </div>
+            </div>
+            <h1 className="text-2xl font-bold mt-4">
+              10 Reasons To Do A Digital Detox Challenge
+            </h1>
+            <p className="mt-4 text-gray-700">
+              Netus pretium tellus nulla commodo massa adipiscing in elementum
+              magna congue condimentum placerat habitasse potenti ac orci a
+              quisque tristique elementum et viverra at condimentum scelerisque
+              eu mi. Elit praesent cras vehicula a ullamcorper nulla scelerisque
+              aliquet tempus faucibus quam ac aliquet nibh a condimentum
+              suspendisse hac integer leo erat aliquam ut himenaeos.
+            </p>
+            <p className="mt-4 text-gray-700">
+              Ac haca ullamcorper donec ante habi tasse donec imperdiet eturpis
+              varius per a augue magna hac. Nec hac et vestibulum duis a
+              tincidunt per a aptent interdum purus feugiat a id aliquet erat
+              himenaeos nunc torquent euismod adipiscing adipiscing dui gravida
+              justo.
+            </p>
+            {/* Quote Section */}
+            <div className="bg-brand text-white px-4 py-2 mt-4 text-lg font-semibold">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="#ffffff"
+                viewBox="0 0 256 256"
+              >
+                <path d="M100,60H40A12,12,0,0,0,28,72v64a12,12,0,0,0,12,12h64v12a36,36,0,0,1-36,36,4,4,0,0,0,0,8,44.05,44.05,0,0,0,44-44V72A12,12,0,0,0,100,60Zm4,80H40a4,4,0,0,1-4-4V72a4,4,0,0,1,4-4h60a4,4,0,0,1,4,4ZM216,60H156a12,12,0,0,0-12,12v64a12,12,0,0,0,12,12h64v12a36,36,0,0,1-36,36,4,4,0,0,0,0,8,44.05,44.05,0,0,0,44-44V72A12,12,0,0,0,216,60Zm4,80H156a4,4,0,0,1-4-4V72a4,4,0,0,1,4-4h60a4,4,0,0,1,4,4Z"></path>
+              </svg>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. 
+            </div>
+            <p className="mt-4 text-gray-600">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            </p>
           </div>
 
           {/* Sidebar */}
@@ -195,7 +168,7 @@ const BlogList = () => {
                   { name: "Chiken Fry", price: 26, image: "/images/1.png" },
                   { name: "Burger Food", price: 46, image: "/images/2.png" },
                   { name: "Pizza", price: 16, image: "/images/3.png" },
-                  { name: "Fresh Fruits", price:  36, image: "/images/4.png" },
+                  { name: "Fresh Fruits", price: 36, image: "/images/4.png" },
                   { name: "Vegitables", price: 16, image: "/images/5.png" },
                 ].map((item, index) => (
                   <li key={index} className="flex items-center justify-between">
@@ -266,27 +239,9 @@ const BlogList = () => {
             </div>
           </div>
         </div>
-
-        {/* Pagination */}
-        <div className="flex justify-center items-center mt-8">
-          <button className="border border-brand text-brand px-4 py-2 mx-1 hover:bg-brand hover:text-white">
-            &lt;&lt;
-          </button>
-          {[1, 2, 3].map((page) => (
-            <button
-              key={page}
-              className="border border-brand text-brand px-4 py-2 mx-1 hover:bg-brand hover:text-white"
-            >
-              {page}
-            </button>
-          ))}
-          <button className="border border-brand text-brand px-4 py-2 mx-1 hover:bg-brand hover:text-white">
-            &gt;&gt;
-          </button>
-        </div>
       </div>
     </>
   );
 };
 
-export default BlogList;
+export default BlogDetails;
