@@ -1,11 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaCalendarAlt, FaUserAlt, FaComment } from "react-icons/fa";
 
 const BlogDetails: React.FC = () => {
+  // State for form inputs
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [comment, setComment] = useState("");
+
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle comment submission logic here, e.g., saving it or sending it to an API
+    console.log("Comment Submitted:", { name, email, comment });
+  };
+
   return (
     <>
       <Navbar />
@@ -80,11 +92,211 @@ const BlogDetails: React.FC = () => {
               >
                 <path d="M100,60H40A12,12,0,0,0,28,72v64a12,12,0,0,0,12,12h64v12a36,36,0,0,1-36,36,4,4,0,0,0,0,8,44.05,44.05,0,0,0,44-44V72A12,12,0,0,0,100,60Zm4,80H40a4,4,0,0,1-4-4V72a4,4,0,0,1,4-4h60a4,4,0,0,1,4,4ZM216,60H156a12,12,0,0,0-12,12v64a12,12,0,0,0,12,12h64v12a36,36,0,0,1-36,36,4,4,0,0,0,0,8,44.05,44.05,0,0,0,44-44V72A12,12,0,0,0,216,60Zm4,80H156a4,4,0,0,1-4-4V72a4,4,0,0,1,4-4h60a4,4,0,0,1,4,4Z"></path>
               </svg>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip.
             </div>
             <p className="mt-4 text-gray-600">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
             </p>
+            <p className="mt-4 text-gray-600">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            </p>
+            <p className="mt-4 text-gray-600">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing
+            </p>
+            <p className="mt-4 text-gray-600">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            </p>
+            <p className="mt-4 text-gray-600">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            </p>
+
+            <div className="container mx-auto p-4">
+              {/* Tags Section */}
+              <div className="mb-4">
+                <span className="text-sm font-bold text-gray-600 mr-3">
+                  Tags:{" "}
+                </span>
+                <span className="bg-gray-200 px-2 py-1 text-xs text-gray-700 rounded-full mr-2">
+                  Restaurant
+                </span>
+                <span className="bg-gray-200 px-2 py-1 text-xs text-gray-700 rounded-full mr-2">
+                  Dinner
+                </span>
+                <span className="bg-gray-200 px-2 py-1 text-xs text-gray-700 rounded-full mr-2">
+                  Pizza
+                </span>
+                <span className="bg-gray-200 px-2 py-1 text-xs text-gray-700 rounded-full mr-2">
+                  Yummy
+                </span>
+              </div>
+
+              {/* Share Icons Section */}
+              <div className="mb-4">
+                <span className="text-sm font-medium text-gray-600">
+                  Share:{" "}
+                </span>
+                <a href="#" className="text-blue-500 hover:text-blue-700 mr-2">
+                  <i className="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="#" className="text-blue-400 hover:text-blue-600 mr-2">
+                  <i className="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="#" className="text-pink-500 hover:text-pink-700 mr-2">
+                  <i className="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="#" className="text-red-500 hover:text-red-700">
+                  <i className="fab fa-pinterest"></i> Pinterest
+                </a>
+              </div>
+
+              {/* Comments Section */}
+              <div className="comments-section">
+                <h3 className="text-xl font-semibold mb-4">Comments</h3>
+
+                {/* Comment 1 */}
+                <div className="comment mb-4">
+                  <div className="flex items-center mb-2">
+                    <span className="font-semibold mr-2">MD Sojib Khan</span>
+                    <span className="text-sm text-gray-500">June 22, 2020</span>
+                  </div>
+                  <p className="text-gray-700">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nunc orci tellus, fermentum nec imperdiet sed, pulvinar et
+                    sem. Fusce hendrerit faucibus sollicitudin.
+                  </p>
+                </div>
+
+                {/* Comment 2 */}
+                <div className="comment mb-4">
+                  <div className="flex items-center mb-2">
+                    <span className="font-semibold mr-2">John Doe</span>
+                    <span className="text-sm text-gray-500">
+                      March 15, 2021
+                    </span>
+                  </div>
+                  <p className="text-gray-700">
+                    Donec a urna at purus tincidunt laoreet eu ac nulla. Aliquam
+                    erat volutpat. Curabitur fringilla mi eget diam tempus, non
+                    condimentum odio malesuada.
+                  </p>
+                </div>
+
+                {/* Comment 3 */}
+                <div className="comment mb-4">
+                  <div className="flex items-center mb-2">
+                    <span className="font-semibold mr-2">Jane Smith</span>
+                    <span className="text-sm text-gray-500">
+                      November 10, 2022
+                    </span>
+                  </div>
+                  <p className="text-gray-700">
+                    Phasellus vestibulum felis eu arcu viverra, eget vehicula
+                    nulla mollis. Nulla facilisi. Integer auctor ipsum et felis
+                    lacinia, id fermentum purus pretium.
+                  </p>
+                </div>
+              </div>
+
+              {/* Post a Comment Section */}
+              <div className="post-comment mt-8">
+                <h3 className="text-xl font-semibold mb-4">Post a Comment</h3>
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-4">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label
+                      htmlFor="comment"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Your Comment
+                    </label>
+                    <textarea
+                      id="comment"
+                      rows={4}
+                      className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
+                      required
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+                  >
+                    Post Comment
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
 
           {/* Sidebar */}
