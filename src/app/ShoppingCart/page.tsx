@@ -89,7 +89,7 @@ const ShoppingCart: React.FC = () => {
             <span className="text-brand">Shopping</span>{" "}
             <span className="text-white">Cart</span>
           </h1>
-          <p className="text-base sm:text-lg">
+          <p className="text-white text-base sm:text-lg">
             Home <span className="mx-2">/</span>
             <span className="text-brand">Shopping Cart</span>
           </p>
@@ -128,7 +128,7 @@ const ShoppingCart: React.FC = () => {
                       />
                       <div>
                         <p className="text-sm sm:text-base">{item.name}</p>
-                        <p className="text-brand text-sm sm:text-base">
+                        <p className="text-brand text-sm text-base">
                           {"★".repeat(item.rating)}
                           {"☆".repeat(5 - item.rating)}
                         </p>
@@ -157,7 +157,7 @@ const ShoppingCart: React.FC = () => {
                     </td>
                     <td className="py-2">
                       <button
-                        className="text-gray-500 text-base hover:text-brand"
+                        className="text-sm sm:text-base text-gray-500 text-base hover:text-brand"
                         onClick={() => handleRemove(item.id)}
                       >
                         X

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaCalendarAlt, FaUserAlt, FaComment } from "react-icons/fa";
 
-const BlogDetails = () => {
+const BlogList = () => {
   const posts = [
     {
       title: "10 Reasons To Do A Digital Detox Challenge",
@@ -289,4 +289,4 @@ const BlogDetails = () => {
   );
 };
 
-export default BlogDetails;
+export default BlogList;
