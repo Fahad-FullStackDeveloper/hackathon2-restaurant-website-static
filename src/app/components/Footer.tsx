@@ -74,7 +74,7 @@ const Footer = () => {
                 { label: "Partners", href: "#" },
                 { label: "Team", href: "#" },
                 { label: "Menu", href: "/Menu" },
-                { label: "Contacts", href: "/Contacts" },
+                { label: "Contacts", href: "../Contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="text-md hover:text-brand">

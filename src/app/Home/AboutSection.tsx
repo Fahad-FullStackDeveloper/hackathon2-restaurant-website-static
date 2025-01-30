@@ -55,7 +55,7 @@ const AboutUsSection = () => {
             </ul>
 
             {/* Linked Button */}
-            <Link href="./about_us">
+            <Link href="../About">
             <button className="bg-brand text-white text-lg rounded-full px-14 py-4 mt-8 hover:bg-[#e68900] transition duration-300">
               Read More
             </button>
