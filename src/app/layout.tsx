@@ -1,24 +1,20 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Inter } from "next/font/google";
+import { Inter, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 
+// Define Great Vibes font
+const greatvibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-great-vibes",
+});
+
 // Define Inter font
 const inter = Inter({
-  subsets: ["latin"], // Specify subsets based on your needs
-  weight: ["400", "700"], // Include the weights you need
-  variable: "--font-inter", // Define a custom CSS variable
-});
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${greatvibes.variable} ${inter.variable} font-helvetica antialiased`}
       >
         {children}
         <Footer />

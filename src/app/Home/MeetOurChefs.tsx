@@ -9,7 +9,7 @@ const MetOurChefs = () => {
       <div className="container mx-auto px-4">
         {/* Top Text Section */}
         <div className="text-center mb-16 mt-10">
-          <h2 className="text-3xl text-brand mb-4 font-GreatVibes">Chefs</h2>
+          <h2 className="text-3xl text-brand mb-4 font-greatvibes">Chefs</h2>
           <h3 className="text-5xl font-semibold text-white">
             <span className="text-brand">Me</span>et Our Chefs
           </h3>

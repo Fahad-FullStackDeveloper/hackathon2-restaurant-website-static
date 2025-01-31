@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="bg-base text-base-contrast py-12 px-4 md:px-10">
       <div className="container mx-auto">
         {/* Support Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between pb-12 border-b border-brand">
+        <div className="flex flex-col md:flex-row items-center justify-between pb-12 border-b border-brand ml-28 mr-28">
           {/* Text Section */}
           <div className="text-left mb-6 md:mb-0">
             <h3 className="text-3xl font-semibold">
@@ -26,13 +26,13 @@ const Footer = () => {
           </div>
 
           {/* Input and Button Section */}
-          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-2">
+          <div className="flex flex-col sm:flex-row items-center md:text-xs md:-space-x-2 sm:space-y-0 sm:-space-x-1">
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full sm:w-auto px-4 py-2 bg-brand text-base-contrast placeholder-base-contrast rounded-sm focus:outline-none"
+              className="w-full sm:w-auto px-4 py-3 bg-brand text-base-contrast placeholder-base-contrast rounded-sm focus:outline-none"
             />
-            <button className="px-6 py-2 bg-base-contrast text-brand rounded-sm hover:bg-brand hover:text-base-contrast">
+            <button className="px-6 py-3 bg-base-contrast text-brand rounded-sm hover:bg-brand hover:text-base-contrast">
               Subscribe Now
             </button>
           </div>

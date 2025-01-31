@@ -9,10 +9,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Inter: ["Inter", "sans-serif"],
-        Helvetica: ["Helvetica", "sans-serif", "cursive"],
-        GreatVibes: ["Great Vibes", "cursive"],        
-      },
+        inter: ["var(--font-inter)", "sans-serif"],  // ✅ Use lowercase key
+        helvetica: ["var(--font-helvetica)", "sans-serif"],
+        greatvibes: ["var(--font-great-vibes)", "cursive"],  
+      },     
       colors: {
         brand: {
           DEFAULT: "#FF9F0D", // Yellow Primary brand color
@@ -21,34 +21,32 @@ export default {
           contrast: "#ffffff", // White Contrast color for text/icons
         },
         secondary: {
-          DEFAULT: "#0057A1", // Main secondary color
-          light: "#1A7DCE", // Lighter shade of secondary
-          dark: "#003C70", // Darker shade of secondary
-          contrast: "#ffffff", // White Contrast color for text/icons
+          DEFAULT: "#0057A1",
+          light: "#1A7DCE",
+          dark: "#003C70",
+          contrast: "#ffffff",
         },
         base: {
-          DEFAULT: "#0D0D0D", // Base color
-          light: "#f0f0f0", // Lighter shade of base
-          dark: "#000000", // Darker shade of base
-          contrast: "#ffffff", // White Contrast color for text/icons
+          DEFAULT: "#0D0D0D",
+          light: "#f0f0f0",
+          dark: "#000000",
+          contrast: "#ffffff",
         },
         statecolors: {
-          Info: "#2F80ED", // Main secondary color
-          Success: "#27AE60", // Lighter shade of secondary
-          Warning: "#E2B93B", // Darker shade of secondary
-          Error: "#EB5757", // Contrast color for text/icons
+          info: "#2F80ED",
+          success: "#27AE60",
+          warning: "#E2B93B",
+          error: "#EB5757",
         },
         accent: {
-          DEFAULT: "#A10DF0", // Accent color for highlights
-          light: "#C883F4", // Lighter shade of accent
-          dark: "#7807B8", // Darker shade of accent
+          DEFAULT: "#A10DF0",
+          light: "#C883F4",
+          dark: "#7807B8",
         },
         neutral: {
-          light: "#F4F4F4", // Backgrounds
-          dark: "#212121", // Dark mode or text
+          light: "#F4F4F4",
+          dark: "#212121",
         },
-        // background: "var(--background)",
-        // foreground: "var(--foreground)",
       },
     },
   },

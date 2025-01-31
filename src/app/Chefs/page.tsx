@@ -58,7 +58,7 @@ const AllChefs = () => {
         <div className="container mx-auto px-4">
           {/* Top Section */}
           <div className="text-center mb-10">
-            <h2 className="text-3xl text-brand mb-4 font-GreatVibes">
+            <h2 className="text-3xl text-brand mb-4 font-greatvibes">
               Meet Our Chefs
             </h2>
             <h3 className="text-5xl font-semibold text-gray-800">

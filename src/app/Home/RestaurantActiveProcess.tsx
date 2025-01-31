@@ -17,7 +17,7 @@ const RestaurantActiveProcess = () => {
         />
         <div className="container px-10 relative z-10 flex flex-col items-end h-full text-right">
           <div className="p-8 rounded-lg max-w-2xl">
-            <h2 className="text-4xl text-brand mb-6 font-GreatVibes">
+            <h2 className="text-4xl text-brand mb-6 font-greatvibes">
               Restaurent Active Process
             </h2>
             <h3 className="text-4xl md:text-5xl font-semibold text-white mb-6">

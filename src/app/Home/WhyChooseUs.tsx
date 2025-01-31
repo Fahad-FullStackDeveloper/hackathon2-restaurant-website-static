@@ -80,7 +80,7 @@ const WhyChooseUs = () => {
 
             {/* Right Side: Text Content */}
             <div className="w-full md:w-1/2 lg:w-1/2 text-center md:text-left px-4 md:px-12 mt-10 md:mt-16 ">
-              <h2 className="text-3xl text-brand mb-4 font-GreatVibes">
+              <h2 className="text-3xl text-brand mb-4 font-greatvibes">
                 Why Choose Us
               </h2>
               <h3 className="text-4xl md:text-5xl font-semibold text-white mb-8">

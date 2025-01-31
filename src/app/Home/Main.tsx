@@ -18,7 +18,7 @@ const MainRecipe = () => {
       <div className="container mx-auto px-4 flex flex-wrap items-center relative z-10">
         {/* Left Side: Text Content */}
         <div className="w-full md:w-2/5 lg:w-2/5 text-center md:text-left pr-0 md:pr-20">
-          <h2 className="text-3xl text-brand font-GreatVibes mb-4">
+          <h2 className="text-3xl text-brand font-greatvibes mb-4">
             {`It’s Quick & Amusing!`}
           </h2>
           <h3 className="text-6xl font-semibold text-white mb-10">

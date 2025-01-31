@@ -388,7 +388,7 @@ const AboutPage = () => {
         <div className="w-full flex flex-col items-center px-6 mt-40 mb-28">
           {/* Testimonials Heading */}
           <div className="mb-10">
-            <h2 className="text-3xl text-brand mb-4 font-GreatVibes">
+            <h2 className="text-3xl text-brand mb-4 font-greatvibes">
               Testimonials
             </h2>
             <h3 className="text-5xl font-semibold font-Helvetica text-base-dark mb-20">

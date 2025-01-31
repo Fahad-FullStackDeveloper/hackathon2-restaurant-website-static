@@ -8,7 +8,7 @@ const ChooseAndPick = () => {
         <div className="container mx-auto px-4">
           {/* Top Text Section */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl text-brand mb-4 font-GreatVibes">Choose & pick</h2>
+            <h2 className="text-3xl text-brand mb-4 font-greatvibes">Choose & pick</h2>
             <h3 className="text-4xl md:text-5xl font-semibold text-white mb-8">
               <span className="text-brand">Fr</span>om Our Menu
             </h3>

@@ -17,7 +17,7 @@ const Achievements = () => {
 
       {/* Achievements Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="flex justify-center text-4xl text-brand mb-10 font-GreatVibes">
+        <h2 className="flex justify-center text-4xl text-brand mb-10 font-greatvibes">
           Our Achivements
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">

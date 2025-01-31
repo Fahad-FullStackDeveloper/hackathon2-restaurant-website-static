@@ -11,7 +11,7 @@ export default {
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
         Helvetica: ["Helvetica", "sans-serif", "cursive"],
-        GreatVibes: ["Great Vibes", "cursive"],        
+        greatvibes: ["Great Vibes", "cursive"],        
       },
       colors: {
         brand: {

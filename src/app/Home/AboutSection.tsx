@@ -11,7 +11,7 @@ const AboutUsSection = () => {
           {/* Left Side: Text Content */}
           <div className="w-full md:w-1/2 lg:w-1/2 text-center md:text-left pr-20">
             {/* "About us" */}
-            <h2 className="text-3xl text-brand mb-4 font-GreatVibes">
+            <h2 className="text-3xl text-brand mb-4 font-greatvibes">
               About us
             </h2>
 
