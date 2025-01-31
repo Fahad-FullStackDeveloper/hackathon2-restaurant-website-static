@@ -22,17 +22,35 @@ const BlogDetails: React.FC = () => {
     <>
       <Navbar />
       {/* Header Component */}
-      <header
-        className="bg-black text-white py-16 bg-cover bg-center"
-        style={{ backgroundImage: `url('/images/HeaderBG.png')` }}
-      >
-        <div className="container mx-auto px-4 flex flex-col justify-center items-center text-center">
+      <header className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/HeaderBG.png" // Path to your background image
+            alt="Header Background"
+            layout="fill" // Makes the image cover the entire container
+            objectFit="cover" // Ensures the image covers the area without distortion
+            quality={100} // Optional: Adjust image quality
+            priority // Optional: Load this image with high priority
+          />
+        </div>
+
+        {/* Overlay to darken the background image (optional) */}
+        <div className="absolute inset-0 bg-opacity-10"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center">
+          {/* Main Heading */}
           <h1 className="text-5xl font-bold mb-4">
-            <span className="text-brand">Blog</span> Details
+            <span className="text-brand">Blog</span>
+            <span className="text-white"> Details</span>
           </h1>
+
+          {/* Page Route */}
           <p className="text-lg">
-            Home <span className="mx-2">/</span>
+            Home <span className="mx-2">{">"}</span>
             <span className="text-brand">Blog Details</span>
+            {/* Changed color to brand color #FF9F0D */}
           </p>
         </div>
       </header>

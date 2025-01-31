@@ -50,11 +50,24 @@ const BlogList = () => {
     <>
       <Navbar />
       {/* Header Component */}
-      <header
-        className="bg-black text-white py-16 bg-cover bg-center"
-        style={{ backgroundImage: `url('/images/HeaderBG.png')` }} // Inline style path to your image
-      >
-        <div className="container mx-auto px-4 flex flex-col justify-center items-center text-center">
+      <header className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/HeaderBG.png" // Path to your background image
+            alt="Header Background"
+            layout="fill" // Makes the image cover the entire container
+            objectFit="cover" // Ensures the image covers the area without distortion
+            quality={100} // Optional: Adjust image quality
+            priority // Optional: Load this image with high priority
+          />
+        </div>
+
+        {/* Overlay to darken the background image (optional) */}
+        <div className="absolute inset-0 bg-opacity-10"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center">
           {/* Main Heading */}
           <h1 className="text-5xl font-bold mb-4">
             <span className="text-brand">Blog</span>
@@ -63,8 +76,8 @@ const BlogList = () => {
 
           {/* Page Route */}
           <p className="text-lg">
-            Home <span className="mx-2">/</span>
-            <span className="text-brand">Blog Details</span>{" "}
+            Home <span className="mx-2">{">"}</span>
+            <span className="text-brand">Blog List</span>
             {/* Changed color to brand color #FF9F0D */}
           </p>
         </div>
@@ -108,9 +121,9 @@ const BlogList = () => {
                     {post.description}
                   </p>
                   <Link href="/BlogDetails">
-                  <button className="text-base-dark border border-brand px-4 py-2 text-sm sm:text-base flex items-center hover:bg-brand hover:text-white rounded">
-                    Read More
-                  </button>
+                    <button className="text-base-dark border border-brand px-4 py-2 text-sm sm:text-base flex items-center hover:bg-brand hover:text-white rounded">
+                      Read More
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -198,7 +211,7 @@ const BlogList = () => {
                   { name: "Chiken Fry", price: 26, image: "/images/1.png" },
                   { name: "Burger Food", price: 46, image: "/images/2.png" },
                   { name: "Pizza", price: 16, image: "/images/3.png" },
-                  { name: "Fresh Fruits", price:  36, image: "/images/4.png" },
+                  { name: "Fresh Fruits", price: 36, image: "/images/4.png" },
                   { name: "Vegitables", price: 16, image: "/images/5.png" },
                 ].map((item, index) => (
                   <li key={index} className="flex items-center justify-between">

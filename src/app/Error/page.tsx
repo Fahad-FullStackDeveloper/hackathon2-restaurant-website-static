@@ -1,17 +1,31 @@
 import React from "react";
 import Link from "next/link";
 import Navbar from "@/app/components/Navbar";
+import Image from "next/image";
 
 const PageNotFound = () => {
   return (
     <section className=" items-center justify-center px-4">
       <Navbar />
       {/* Header Component */}
-      <header
-        className="bg-black text-white py-16 bg-cover bg-center"
-        style={{ backgroundImage: `url('/images/HeaderBG.png')` }} // Inline style path to your image
-      >
-        <div className="container mx-auto px-4 flex flex-col justify-center items-center text-center">
+      <header className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/HeaderBG.png" // Path to your background image
+            alt="Header Background"
+            layout="fill" // Makes the image cover the entire container
+            objectFit="cover" // Ensures the image covers the area without distortion
+            quality={100} // Optional: Adjust image quality
+            priority // Optional: Load this image with high priority
+          />
+        </div>
+
+        {/* Overlay to darken the background image (optional) */}
+        <div className="absolute inset-0 bg-opacity-10"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center">
           {/* Main Heading */}
           <h1 className="text-5xl font-bold mb-4">
             <span className="text-brand">404</span>
@@ -20,7 +34,7 @@ const PageNotFound = () => {
 
           {/* Page Route */}
           <p className="text-lg">
-            Home <span className="mx-2">/</span>
+            Home <span className="mx-2">{">"}</span>
             <span className="text-brand">404</span>
             {/* Changed color to brand color #FF9F0D */}
           </p>
@@ -29,7 +43,9 @@ const PageNotFound = () => {
 
       {/* Found 404 Error */}
       <div className="text-center mt-20 mb-36">
-        <h1 className="text-8xl font-bold text-brand mb-8 font-Helvetica">404</h1>
+        <h1 className="text-8xl font-bold text-brand mb-8 font-Helvetica">
+          404
+        </h1>
         <h2 className="text-3xl text-gray-800 font-semibold mb-2">
           Oops! Look likes something going wrong
         </h2>

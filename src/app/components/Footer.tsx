@@ -1,8 +1,13 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-
+import {
+  FaFacebook,
+  FaInstagram,
+  FaPinterest,
+  FaYoutube,
+  FaTwitter,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -131,10 +136,10 @@ const Footer = () => {
                   <Image
                     src={post.src}
                     alt={post.label}
-                    layout="intrinsic"
-                    width={60}
-                    height={60}
-                    className="object-cover rounded-sm"
+                    width={60} // Specify width
+                    height={60} // Specify height
+                    className="rounded-sm"
+                    style={{ objectFit: "cover" }} // Use style for object-fit
                   />
                   <div>
                     <p className="text-sm">{post.label}</p>
@@ -147,46 +152,52 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-12 text-sm text-gray-400 space-y-4 sm:space-y-0">
-          <p>&copy; Copyright 2024 by Ayeman. All rights reserved.</p>
-          <div className="flex items-center space-x-6">
-            {[
-              {
-                href: "https://www.facebook.com",
-                icon: "fab fa-facebook",
-                color: "text-blue-600",
-              },
-              {
-                href: "https://www.twitter.com",
-                icon: "fab fa-twitter",
-                color: "text-blue-400",
-              },
-              {
-                href: "https://www.instagram.com",
-                icon: "fab fa-instagram",
-                color: "text-pink-600",
-              },
-              {
-                href: "https://www.youtube.com",
-                icon: "fab fa-youtube",
-                color: "text-red-600",
-              },
-              {
-                href: "https://www.pinterest.com",
-                icon: "fab fa-pinterest",
-                color: "text-red-600",
-              },
-            ].map((social) => (
-              <a
-                key={social.icon}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-8 h-8 bg-base-contrast flex justify-center items-center rounded-md shadow-md hover:bg-brand ${social.color}`}
-              >
-                <i className={social.icon}></i>
-              </a>
-            ))}
+        <div className="container mx-auto px-4">
+          {/* Footer Content */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-12 text-sm text-gray-400 space-y-4 sm:space-y-0">
+            {/* Copyright Text */}
+            <p>&copy; Copyright 2024 by Ayeman. All rights reserved.</p>
+
+            {/* Social Icons */}
+            <div className="flex items-center space-x-6">
+              {[
+                {
+                  href: "https://www.facebook.com",
+                  icon: <FaFacebook />,
+                  color: "text-blue-600",
+                },
+                {
+                  href: "https://www.twitter.com",
+                  icon: <FaTwitter />,
+                  color: "text-blue-400",
+                },
+                {
+                  href: "https://www.instagram.com",
+                  icon: <FaInstagram />,
+                  color: "text-pink-600",
+                },
+                {
+                  href: "https://www.youtube.com",
+                  icon: <FaYoutube />,
+                  color: "text-red-600",
+                },
+                {
+                  href: "https://www.pinterest.com",
+                  icon: <FaPinterest />,
+                  color: "text-red-600",
+                },
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-8 h-8 bg-base-contrast flex justify-center items-center rounded-md shadow-md hover:bg-brand ${social.color}`}
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

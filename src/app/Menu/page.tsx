@@ -9,25 +9,40 @@ const Menu = () => {
     <>
       <Navbar />
       {/* Header Component */}
-      <header
-        className="bg-black text-white py-16 bg-cover bg-center"
-        style={{ backgroundImage: `url('/images/HeaderBG.png')` }} // Inline style path to your image
-      >
-        <div className="container mx-auto px-4 flex flex-col justify-center items-center text-center">
+      <header className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/HeaderBG.png" // Path to your background image
+            alt="Header Background"
+            layout="fill" // Makes the image cover the entire container
+            objectFit="cover" // Ensures the image covers the area without distortion
+            quality={100} // Optional: Adjust image quality
+            priority // Optional: Load this image with high priority
+          />
+        </div>
+
+        {/* Overlay to darken the background image (optional) */}
+        <div className="absolute inset-0 bg-opacity-10"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center">
           {/* Main Heading */}
           <h1 className="text-5xl font-bold mb-4">
             <span className="text-brand">Our</span>
             <span className="text-white"> Menu</span>
+            {/* Changed color to brand color #FF9F0D */}
           </h1>
 
           {/* Page Route */}
           <p className="text-lg">
-            Home <span className="mx-2">/</span>
-            <span className="text-brand">Menu</span>{" "}
-            {/* Changed color to brand color #FF9F0D */}
+            Home <span className="mx-2">{">"}</span>
+            <span className="text-brand">Menu</span>
+            {/* Changed color to #FF9F0D */}
           </p>
         </div>
       </header>
+
       {/* This is the Menu Section */}
       <section className="bg-white py-10">
         <div className="container mx-auto px-4 space-y-8">
@@ -365,10 +380,10 @@ const Menu = () => {
         {/* Working Partners */}
         <div className="container mx-auto px-4 relative text-gray-800 z-10">
           <h2 className="flex justify-center text-lg mt-20 mb-4">
-          Patners & Clients
+            Patners & Clients
           </h2>
           <h1 className="flex justify-center text-5xl font-bold pb-14">
-          We work with the best pepole
+            We work with the best pepole
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 text-center">
             {/* Image 1 */}

@@ -9,8 +9,8 @@ const MainRecipe = () => {
       <Image
         src="/images/Rectangle BG_Main.png" // Relative path to the image inside the public folder
         alt="Background"
-        layout="fill" // Ensures the image fills the entire section
-        objectFit="cover" // Maintains the aspect ratio while covering the area
+        fill // Use boolean `fill` instead of `layout="fill"`
+        style={{ objectFit: "cover" }} // Use style for object-fit
         className="absolute bottom-0 left-0 w-full h-full opacity-15 z-10"
       />
 

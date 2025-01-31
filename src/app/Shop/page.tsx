@@ -92,27 +92,42 @@ const ShopPage = () => {
       image: "/images/Chicken Soup.png",
     },
   ]);
+  const [price, setPrice] = useState(400);
 
   return (
     <>
       <Navbar />
       {/* Header Component */}
-      <header
-        className="bg-black text-white py-16 bg-cover bg-center"
-        style={{ backgroundImage: `url('/images/HeaderBG.png')` }} // Inline style path to your image
-      >
-        <div className="container mx-auto px-4 flex flex-col justify-center items-center text-center">
+      <header className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/HeaderBG.png" // Path to your background image
+            alt="Header Background"
+            layout="fill" // Makes the image cover the entire container
+            objectFit="cover" // Ensures the image covers the area without distortion
+            quality={100} // Optional: Adjust image quality
+            priority // Optional: Load this image with high priority
+          />
+        </div>
+
+        {/* Overlay to darken the background image (optional) */}
+        <div className="absolute inset-0 bg-opacity-10"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center">
           {/* Main Heading */}
           <h1 className="text-5xl font-bold mb-4">
-            <span className="text-brand"> Our</span>
+            <span className="text-brand">Our</span>
             <span className="text-white"> Shop</span>
+            {/* Changed color to brand color #FF9F0D */}
           </h1>
 
           {/* Page Route */}
           <p className="text-lg">
-            Home <span className="mx-2">/</span>
+            Home <span className="mx-2">{">"}</span>
             <span className="text-brand">Shop</span>
-            {/* Changed color to brand color #FF9F0D */}
+            {/* Changed color to brand */}
           </p>
         </div>
       </header>
@@ -194,30 +209,30 @@ const ShopPage = () => {
         <aside className="w-full lg:w-1/4 bg-white boarder border-gray-300 p-4">
           {/* Search Product */}
           <div className="flex mb-6 h-10 w-60">
-          <div className="flex items-center h-10">
-            <input
-              type="text"
-              id="search"
-              placeholder="Search by Product"
-              className="w-full p-2 border bg-orange-100"
-            />
-          </div>
-          {/* Search Icon */}
-          <div className="flex items-center justify-center bg-brand w-12">
-            <Link href="/Search">
-              <svg
-                className="transition duration-300 cursor-pointer hover:text-brand"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24" // Adjust size here
-                height="24" // Adjust size here
-                fill="#fafafa"
-                id="search-icon"
-                viewBox="0 0 256 256"
-              >
-                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
-              </svg>
-            </Link>
-          </div>
+            <div className="flex items-center h-10">
+              <input
+                type="text"
+                id="search"
+                placeholder="Search by Product"
+                className="w-full p-2 border bg-orange-100"
+              />
+            </div>
+            {/* Search Icon */}
+            <div className="flex items-center justify-center bg-brand w-12">
+              <Link href="/Search">
+                <svg
+                  className="transition duration-300 cursor-pointer hover:text-brand"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24" // Adjust size here
+                  height="24" // Adjust size here
+                  fill="#fafafa"
+                  id="search-icon"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                </svg>
+              </Link>
+            </div>
           </div>
 
           {/* Categories */}
@@ -244,19 +259,22 @@ const ShopPage = () => {
             </ul>
           </div>
 
-          {/* Filter by Price */}
-          <div className="flex-grow bg-white hover:bg-white accent-brand">
+          <div className="flex-grow p-4 rounded-lg shadow-md">
             <p className="font-bold mb-2">Filter by Price</p>
             <div className="flex flex-col gap-2">
               <input
                 type="range"
                 min="0"
-                max="4000"
-                className="flex-grow bg-white accent-brand"
+                max="1000"
+                value={price}
+                onChange={(e) => setPrice(Number(e.target.value))}
+                className="w-full accent-brand"
               />
-              <div className="flex justify-between items-center text-gray-500 mb-6">
-                <span>From $0 to $4000</span>
-                <span>Filter</span>
+              <div className="flex justify-between items-center text-gray-500">
+                <span>From $0 to ${price}</span>
+                <button className="px-3 py-1 bg-brand text-white rounded">
+                  Filter
+                </button>
               </div>
             </div>
           </div>
