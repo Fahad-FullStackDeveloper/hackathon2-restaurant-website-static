@@ -7,43 +7,108 @@ const Contact = () => {
   return (
     <>
       <Navbar />
+
       {/* Header Component */}
-      <header className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src="/images/HeaderBG.png" // Path to your background image
-            alt="Header Background"
-            layout="fill" // Makes the image cover the entire container
-            objectFit="cover" // Ensures the image covers the area without distortion
-            quality={100} // Optional: Adjust image quality
-            priority // Optional: Load this image with high priority
-          />
-        </div>
+            <header className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
+              {/* Background Image */}
+              <div className="absolute inset-0 w-full h-full">
+                <Image
+                  src="/images/HeaderBG.png" // Path to your background image
+                  alt="Header Background"
+                  layout="fill" // Makes the image cover the entire container
+                  objectFit="cover" // Ensures the image covers the area without distortion
+                  quality={100} // Optional: Adjust image quality
+                  priority // Optional: Load this image with high priority
+                />
+              </div>
+      
+              {/* Overlay to darken the background image (optional) */}
+              <div className="absolute inset-0 bg-opacity-10"></div>
+      
+              {/* Content */}
+              <div className="relative z-10 text-center">
+                {/* Main Heading */}
+                <h1 className="text-5xl font-bold mb-4">
+                  <span className="text-brand">Contact</span>
+                  <span className="text-white"> Us</span>
+                </h1>
+      
+                {/* Page Route */}
+                <p className="text-lg">
+                  Home <span className="mx-2">{">"}</span>
+                  <span className="text-brand">Contact</span>
+                  {/* Changed color to brand color #FF9F0D */}
+                </p>
+              </div>
+            </header>
 
-        {/* Overlay to darken the background image (optional) */}
-        <div className="absolute inset-0 bg-opacity-10"></div>
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-10">
+        {/* Contact Information */}
+        <section className="mb-12 text-center">
+          <h2 className="text-4xl font-bold mb-4">Get in Touch</h2>
+          <p className="text-lg text-gray-600">{`We would love to hear from you! Whether it's feedback, reservations, or just saying hello.`}</p>
+        </section>
 
-        {/* Content */}
-        <div className="relative z-10 text-center">
-          {/* Main Heading */}
-          <h1 className="text-5xl font-bold mb-4">
-            <span className="text-brand">Contact</span>
-            <span className="text-white"> Us</span>
-            {/* Changed color to brand color #FF9F0D */}
-          </h1>
+        {/* Contact Form */}
+        <section className="max-w-3xl mx-auto bg-gray-200 shadow-lg rounded-xl p-8">
+          <h3 className="text-2xl font-semibold mb-6 text-center">
+            Contact Form
+          </h3>
+          <form>
+            <div className="mb-4">
+              <label className="block text-gray-700 mb-2" htmlFor="name">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                className="w-full border rounded-lg px-4 py-2"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 mb-2" htmlFor="email">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                className="w-full border rounded-lg px-4 py-2"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 mb-2" htmlFor="message">
+                Message
+              </label>
+              <textarea
+                id="message"
+                placeholder="Your Message"
+                rows={4}
+                className="w-full border rounded-lg px-4 py-2"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-brand text-white py-2 rounded-lg hover:bg-brand-dark"
+            >
+              Send Message
+            </button>
+          </form>
+        </section>
 
-          {/* Page Route */}
-          <p className="text-lg">
-            Home <span className="mx-2">{">"}</span>
-            <span className="text-brand">Contact</span>
-            {/* Changed color to brand */}
+        {/* Location and Contact Details */}
+        <section className="mt-16 text-center">
+          <h3 className="text-2xl font-semibold mb-4">Visit Us</h3>
+          <p className="text-lg">123 Delicious Avenue, Food City, Yummyland</p>
+          <p className="text-lg mt-2">
+            Phone: <span className="text-brand">+1 (234) 567-890</span>
           </p>
-        </div>
-      </header>
-      {/* This is the Contact Page */}
-      <main>
-        <h1>Contact Page</h1>
+          <p className="text-lg mt-2">
+            Email: <span className="text-brand">contact@fooddelight.com</span>
+          </p>
+        </section>
       </main>
     </>
   );
