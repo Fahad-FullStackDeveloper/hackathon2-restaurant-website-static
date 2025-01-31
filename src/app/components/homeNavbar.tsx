@@ -1,54 +1,68 @@
-import Link from "next/link";
-import React from "react";
+"use client"
+
+import Link from "next/link"
+import { useState } from "react"
+import { Menu } from "lucide-react"
 
 const HomeNavbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
-    <nav className="bg-base py-4 shadow-md">
-      <div className="container mx-auto px-4 flex justify-between items-center pr-20 pl-20">
+    <nav className="bg-base py-4 shadow-md relative">
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        {/* Mobile Menu Toggle */}
+        <div className="lg:hidden">
+          <button onClick={toggleMenu} className="text-base-contrast hover:text-brand">
+            <Menu size={24} />Menu
+          </button>
+        </div>
+
         {/* Navigation Links */}
-        <ul className="flex space-x-6">
+        <ul
+          className={`lg:flex lg:space-x-6 absolute lg:relative left-0 right-0 top-full lg:top-auto bg-base lg:bg-transparent z-50 p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ${
+            isMenuOpen ? "flex flex-col space-y-2" : "hidden"
+          }`}
+        >
           <li className="relative">
-            <Link href="/" className="text-base-contrast hover:text-brand">
+            <Link href="/" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
               Home
               <div className="absolute left-1/2 -translate-x-1/2 mt-1 bg-brand rounded-full w-2 h-2"></div>
             </Link>
           </li>
           <li>
-            <Link href="/Menu" className="text-base-contrast hover:text-brand">
+            <Link href="/Menu" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
               Menu
             </Link>
           </li>
           <li>
-            <Link href="/BlogList" className="text-base-contrast hover:text-brand">
+            <Link href="/BlogList" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
               Blog
             </Link>
           </li>
           <li>
-            <Link href="/Pages" className="text-base-contrast hover:text-brand">
+            <Link href="/Pages" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
               Pages
             </Link>
           </li>
           <li>
-            <Link href="/About" className="flex items-center text-base-contrast hover:text-brand">
+            <Link href="/About" className="flex items-center text-base-contrast hover:text-brand block py-2 lg:py-0">
               About
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#fafafa"
-                viewBox="0 0 256 256"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fafafa" viewBox="0 0 256 256">
                 <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
               </svg>
             </Link>
           </li>
           <li>
-            <Link href="/Shop" className="text-base-contrast hover:text-brand">
+            <Link href="/Shop" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
               Shop
             </Link>
           </li>
           <li>
-            <Link href="/Contact" className="text-base-contrast hover:text-brand">
+            <Link href="/Contact" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
               Contact
             </Link>
           </li>
@@ -57,7 +71,7 @@ const HomeNavbar = () => {
         {/* Search Bar and Shopping Icon */}
         <div className="flex items-center space-x-4">
           {/* Search Bar */}
-          <div className="relative">
+          <div className="relative hidden md:block">
             <input
               type="text"
               placeholder="Search..."
@@ -80,22 +94,24 @@ const HomeNavbar = () => {
           </div>
           <div className="">
             {/* Handbag Icon */}
-            <svg
-              className="transition duration-300 cursor-pointer hover:text-brand"
-              xmlns="http://www.w3.org/2000/svg"
-              width="28"
-              height="28"
-              fill="#ffffff"
-              id="handbag"
-              viewBox="0 0 256 256"
-            >
-              <path d="M239.89,198.12l-14.26-120a16,16,0,0,0-16-14.12H176a48,48,0,0,0-96,0H46.33a16,16,0,0,0-16,14.12l-14.26,120A16,16,0,0,0,20,210.6a16.13,16.13,0,0,0,12,5.4H223.92A16.13,16.13,0,0,0,236,210.6,16,16,0,0,0,239.89,198.12ZM128,32a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32ZM32,200,46.33,80H80v24a8,8,0,0,0,16,0V80h64v24a8,8,0,0,0,16,0V80h33.75l14.17,120Z"></path>
-            </svg>
+            <Link href="/ShoppingCart">
+              <svg
+                className="transition duration-300 cursor-pointer hover:text-brand"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                fill="#ffffff"
+                id="handbag"
+                viewBox="0 0 256 256"
+              >
+                <path d="M239.89,198.12l-14.26-120a16,16,0,0,0-16-14.12H176a48,48,0,0,0-96,0H46.33a16,16,0,0,0-16,14.12l-14.26,120A16,16,0,0,0,20,210.6a16.13,16.13,0,0,0,12,5.4H223.92A16.13,16.13,0,0,0,236,210.6,16,16,0,0,0,239.89,198.12ZM128,32a32,32,0,0,1,32,32H96A32,32,0,0,1,128,32ZM32,200,46.33,80H80v24a8,8,0,0,0,16,0V80h64v24a8,8,0,0,0,16,0V80h33.75l14.17,120Z"></path>
+              </svg>
+            </Link>
           </div>
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default HomeNavbar;
+export default HomeNavbar

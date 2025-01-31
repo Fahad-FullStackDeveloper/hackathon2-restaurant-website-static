@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@phosphor-icons/react": "^2.1.7",
     "icons": "^1.0.0",
+    "lucide-react": "^0.474.0",
     "next": "^15.1.6",
     "phosphor": "^0.7.1",
     "phosphor-react": "^1.4.1",
