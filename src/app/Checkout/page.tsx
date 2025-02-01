@@ -10,37 +10,37 @@ const ShippingPage = () => {
       <Navbar />
       {/* Header Component */}
       <header className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
-              {/* Background Image */}
-              <div className="absolute inset-0 w-full h-full">
-                <Image
-                  src="/images/HeaderBG.png" // Path to your background image
-                  alt="Header Background"
-                  layout="fill" // Makes the image cover the entire container
-                  objectFit="cover" // Ensures the image covers the area without distortion
-                  quality={100} // Optional: Adjust image quality
-                  priority // Optional: Load this image with high priority
-                />
-              </div>
-      
-              {/* Overlay to darken the background image (optional) */}
-              <div className="absolute inset-0 bg-opacity-10"></div>
-      
-              {/* Content */}
-              <div className="relative z-10 text-center">
-                {/* Main Heading */}
-                <h1 className="text-5xl font-bold mb-4">
-                  <span className="text-brand">Check</span>
-                  <span className="text-white">out Page</span>
-                </h1>
-      
-                {/* Page Route */}
-                <p className="text-lg">
-                  Home <span className="mx-2">{">"}</span>
-                  <span className="text-brand">Checkout</span>
-                  {/* Changed color to brand color #FF9F0D */}
-                </p>
-              </div>
-            </header>
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/images/HeaderBG.png"
+            alt="Header Background"
+            fill // Replaces layout="fill"
+            style={{ objectFit: "cover" }} // Replaces objectFit="cover"
+            quality={100}
+            priority
+          />
+        </div>
+
+        {/* Overlay to darken the background image (optional) */}
+        <div className="absolute inset-0 bg-opacity-10"></div>
+
+        {/* Content */}
+        <div className="relative z-10 text-center">
+          {/* Main Heading */}
+          <h1 className="text-5xl font-bold mb-4">
+            <span className="text-brand">Check</span>
+            <span className="text-white">out Page</span>
+          </h1>
+
+          {/* Page Route */}
+          <p className="text-lg">
+            Home <span className="mx-2">{">"}</span>
+            <span className="text-brand">Checkout</span>
+            {/* Changed color to brand color #FF9F0D */}
+          </p>
+        </div>
+      </header>
 
       {/* Main Section with 3 Grids */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">

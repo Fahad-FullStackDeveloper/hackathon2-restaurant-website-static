@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { MagnifyingGlass, User, X, List, Tote } from "@phosphor-icons/react"; // Importing icons from Phosphor Icons
+import { MagnifyingGlass, User, Tote, X, List } from "@phosphor-icons/react"; // Importing icons from Phosphor Icons
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

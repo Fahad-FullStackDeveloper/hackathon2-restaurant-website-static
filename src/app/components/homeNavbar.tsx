@@ -1,23 +1,35 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Menu } from "lucide-react"
+import Link from "next/link";
+import { useState } from "react";
+import { Menu } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const HomeNavbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <nav className="bg-base py-4 shadow-md relative">
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Mobile Menu Toggle */}
         <div className="lg:hidden">
-          <button onClick={toggleMenu} className="text-base-contrast hover:text-brand">
-            <Menu size={24} />Menu
+          <button
+            onClick={toggleMenu}
+            className="text-base-contrast hover:text-brand"
+          >
+            <Menu size={24} />
+            Menu
           </button>
         </div>
 
@@ -28,41 +40,141 @@ const HomeNavbar = () => {
           }`}
         >
           <li className="relative">
-            <Link href="/" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
+            <Link
+              href="/"
+              className="text-base-contrast hover:text-brand block py-2 lg:py-0"
+            >
               Home
               <div className="absolute left-1/2 -translate-x-1/2 mt-1 bg-brand rounded-full w-2 h-2"></div>
             </Link>
           </li>
           <li>
-            <Link href="/Menu" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
+            <Link
+              href="/Menu"
+              className="text-base-contrast hover:text-brand block py-2 lg:py-0"
+            >
               Menu
             </Link>
           </li>
           <li>
-            <Link href="/BlogList" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
+            <Link
+              href="/BlogList"
+              className="text-base-contrast hover:text-brand block py-2 lg:py-0"
+            >
               Blog
             </Link>
           </li>
           <li>
-            <Link href="/Pages" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
-              Pages
-            </Link>
-          </li>
-          <li>
-            <Link href="/About" className="flex items-center text-base-contrast hover:text-brand block py-2 lg:py-0">
-              About
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fafafa" viewBox="0 0 256 256">
+            <Link
+              href="/Pages"
+              className="flex items-center text-base-contrast hover:text-brand block py-2 lg:py-0"
+            >
+              <DropdownMenu>
+                <DropdownMenuTrigger>Pages</DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel className="text-brand underline underline-offset-4">
+                    All Pages
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+
+                  {/* Chefs Link */}
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/Chefs"
+                      className="block w-full text-brand text-xs"
+                    >
+                      Our Chefs
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+
+                  {/* Error Link */}
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/Error"
+                      className="block w-full text-brand text-xs"
+                    >
+                      404 Error
+                    </Link>
+                  </DropdownMenuItem>
+
+                  {/* FAQ Link */}
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/FAQ"
+                      className="block w-full text-brand text-xs"
+                    >
+                      FAQ
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+
+                  {/* SignIn Link */}
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/SignIn"
+                      className="block w-full text-brand text-xs"
+                    >
+                      SignIn
+                    </Link>
+                  </DropdownMenuItem>
+
+                  {/* SignUp Link */}
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/SignUp"
+                      className="block w-full text-brand text-xs"
+                    >
+                      SignUp
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+
+                  {/* Subscription Link */}
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/subscription"
+                      className="block w-full text-brand text-xs"
+                    >
+                      Subscription (coming soon)
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              {/* Dropdown Arrow Icon */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#fafafa"
+                viewBox="0 0 256 256"
+              >
                 <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
               </svg>
             </Link>
           </li>
           <li>
-            <Link href="/Shop" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
+            <Link
+              href="/About"
+              className=" text-base-contrast hover:text-brand block py-2 lg:py-0"
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/Shop"
+              className="text-base-contrast hover:text-brand block py-2 lg:py-0"
+            >
               Shop
             </Link>
           </li>
           <li>
-            <Link href="/Contact" className="text-base-contrast hover:text-brand block py-2 lg:py-0">
+            <Link
+              href="/Contact"
+              className="text-base-contrast hover:text-brand block py-2 lg:py-0"
+            >
               Contact
             </Link>
           </li>
@@ -111,7 +223,7 @@ const HomeNavbar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default HomeNavbar
+export default HomeNavbar;

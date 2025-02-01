@@ -102,12 +102,12 @@ const ShopPage = () => {
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/images/HeaderBG.png" // Path to your background image
+            src="/images/HeaderBG.png"
             alt="Header Background"
-            layout="fill" // Makes the image cover the entire container
-            objectFit="cover" // Ensures the image covers the area without distortion
-            quality={100} // Optional: Adjust image quality
-            priority // Optional: Load this image with high priority
+            fill // Replaces layout="fill"
+            style={{ objectFit: "cover" }} // Replaces objectFit="cover"
+            quality={100}
+            priority
           />
         </div>
 
