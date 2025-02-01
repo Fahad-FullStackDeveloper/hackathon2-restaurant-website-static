@@ -67,13 +67,13 @@ const HomeNavbar = () => {
           <li>
             <Link
               href="/Pages"
-              className="flex items-center text-base-contrast hover:text-brand block py-2 lg:py-0"
+              className="flex items-center text-base-contrast hover:text-brand py-2 lg:py-0"
             >
               <DropdownMenu>
                 <DropdownMenuTrigger>Pages</DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuLabel className="text-brand underline underline-offset-4">
-                    All Pages
+                  <DropdownMenuLabel className="hover:bg-amber-200">
+                    Open Pages
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
 
@@ -137,6 +137,15 @@ const HomeNavbar = () => {
                       className="block w-full text-brand text-xs"
                     >
                       Subscription (coming soon)
+                    </Link>
+                  </DropdownMenuItem>
+                  {/* Developer Link */}
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/Developer"
+                      className="block w-full text-brand text-xs"
+                    >
+                      About Developer
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
