@@ -24,8 +24,7 @@ function ProductPage() {
     <div className="container mx-auto max-w-full mb-20">
       <Navbar />
       {/* Header Component */}
-      {/* Header Component */}
-      <header className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
+      <header className="relative h-[300px] flex items-center justify-center text-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
           <Image
